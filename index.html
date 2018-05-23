@@ -1,9 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type">
 	<title>Bonu-Malus Kalkulators</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<h1>Hello!</h1>
+<form id="form" class="form-style-7" onsubmit="return false">
+<ul>
+<li>
+<p>Šis kalkulators ir ticis izveidots, bakalaura darba ietvaros.</p><p>Latvijā darbojās 'Bonus-Malus' sistēma, kurā tiek uzskaitīti visi transportlīdzekļu īpašnieki un sadalīti klasēs, 1. - vissliktākā 17. vislabākā. Transportlīdzekļu īpašnieki nokļust labākās un sliktākās klasēs pēc izraisīto ceļu satiksmes negadījumu skaita un to biežuma. Šī sistēma palīdz apdrošinātājiem piedāvāt atlaides <strong>labajiem</strong> un piemērot piemaksas <strong>sliktajiem</strong> autovadītājiem.</p><p>Tomēr Latvijā ir izplatīta stratēģija, kas ļauj iegūt labāku 'Bonus-Malus' klasi nekā tā pienāktos. Lai apietu šo sistēmu un iegūtu labāku 'Bonus-Malus' klasi autovadītāji mēdz neziņojot par ceļu satiksmes negadījumu apdrošinātājiem, un nosedz negadījuma izmaksas paši. Šāda rīcība padara 'Bonus-Malus' sistēmu neizdevīgu tieši tiem ceļu satiksmes dalībniekiem, kuri iekūlušies 'mazos' vai 'lētos' ceļu satiksmes negadījumos.</p><p>Autors piedāvā esošo Latvijas 'Bonus-Malus' sistēmu papildināt ar 3 apakšklasēm:<br><br>L - labā apakšklase;<br>N - neitrālā apakšklase;<br>S - sliktā apakšklase;<br><br>Šāds papildinājums apdrošināšanas sabiedrībām dotu vairāk informācijas par jaunajiem klientiem, tādejādi apdrošināšanas sabiedrību OCTA cenas aprēķināšanas algoritmi varētu tikt uzlaboti un katram automobiļa īpašniekam tiktu aprēķināta precīzāka OCTA polises cena.</p>
+</li>
+<li id="statistika">
+    <label for="statistika">LTAB statistikas dati:</label>
+	<p style="text-align: justify;">Apdrošināšanas gadījumi: <span class="statNum" id="stat1">332089</span></p>
+	<p style="text-align: justify;">Vidējā apdrošināšanas atlīdzība: € <span class="statNum" id="stat2">1240</span></p>
+	<p style="text-align: justify;">Standartnovirze € <span class="statNum" id="stat3">245</span></p>
+	<p style="text-align: justify;">Apakšklašu pārejas konstante, Ca <span class="statNum" id="stat4">1</span></p>
+	<p style="text-align: center;"><button id="randomize">Randomize</button></p>
+    <span>Nejauši ģenerēti dati,<br>īstie dati ir konfidenciāli un tos apstrādā LTAB</span>
+</li>	
+<li>
+    <label for="name">Vārds Uzvārds</label>
+    <input type="text" name="name" maxlength="100">
+    <span>Ievadi savu vārdu</span>
+</li>
+<li>
+    <label for="BM0">Pašreizējā 'Bonus-Malus' klase</label>
+    <input type="text" name="BM0" maxlength="100">
+    <span>Ievadi pašreizējā 'Bonus-Malus' klasi konkrētajā transportlīdzekļu klasē(auto,moto,kravas trsports... uc.)</span>
+</li>
+<li>
+    <label for="days">Vai Jūsu OCTA polise ir bijusi derīga?(Jā/Nē)</label>
+    <input type="text" name="days" maxlength="100">
+    <span>Derīga kopsummā 275 dienas pārskata gadā. <br>Tiek ieskaitītas visas aktīvās OCTA polises, laika posmā no 01/09/ līdz 31/08</span>
+</li>
+<li>
+    <label for="accidents">Cik CSN apdrošināšanas gadījumi Jums šogad ir bijuši?</label>
+    <input type="text" name="accidents" maxlength="100">
+    <span>Jūsu vainas dēļ izraisīti CSN vienā transportlīdzekļu klasē, <br>laika posmā no 01/09/ līdz 31/08.</span>
+</li>
+<li>
+    <label for="sum">Par cik lielu apdrošināšanas summu ir bijuši negadījumi? <small>(Eur)</small></label>
+    <input type="text" name="sum" maxlength="100">
+    <span>Kopsumma, izmaksātajai atlīdzībai pārskata periodā, no apdrošināšanas sabiedrībām.</span>
+</li>
+<li>
+<span id="button1">APRĒĶINĀT</span>
+</li>
+<li style="border:none;">
+	<span id="result" style="display:none;">
+	 <span><h1>Rezultāts</h1></span>
+	 <span><h2 style="text-align: justify;">Sveicināts, <span id="result1">a</span></h2></span>
+	 <span><h2 style="text-align: justify;">Tava 'Bonus-Malus' klase ir: <span id="result2"> b </span></h2></span>
+	 <span><h2 style="text-align: justify;">Tava 'Bonus-Malus' apaksklase ir: <span id="result3"> c </span></h2></span>
+	</span>
+</li>
+<li>
+
+	<img src="imgs/img1.png" width="100%">
+	<img src="imgs/img2.png" width="100%">
+</li>
+</ul>
+</form>
+<script src="script.js"></script>
 </body>
 </html>
